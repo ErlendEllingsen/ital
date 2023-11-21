@@ -164,6 +164,7 @@ const ItalianNumbersLearning = () => {
       <div className="input-section">
         <input
           type="text"
+          lang="it"
           placeholder="Type the Italian number"
           value={inputValue}
           onChange={handleInputChange}
