@@ -165,6 +165,11 @@ const ItalianNumbersLearning = () => {
         <input
           type="text"
           lang="it"
+          autoCapitalize="none"
+          autoComplete="off"
+          autoCorrect="off"
+          autoFocus={true}
+          enterKeyHint="enter"
           placeholder="Type the Italian number"
           value={inputValue}
           onChange={handleInputChange}
