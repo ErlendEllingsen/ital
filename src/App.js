@@ -117,7 +117,7 @@ const ItalianNumbersLearning = () => {
     // Initialize the first number (pick random)
     const randomIndex = Math.floor(Math.random() * todoNumbers.length);
     setCurrentNumber(todoNumbers[randomIndex]);
-  }, []);
+  }, [todoNumbers]);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
