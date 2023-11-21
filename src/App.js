@@ -114,21 +114,6 @@ const ItalianNumbersLearning = () => {
   const [todoNumbers, setTodoNumbers] = useState(Object.keys(italianNumbers));
 
   useEffect(() => {
-    const handleSpacebar = (event) => {
-      if (event.code === "Space" && todoNumbers.length > 0) {
-        event.preventDefault(); // prevent default spacebar action (e.g., page scrolling)
-        const randomIndex = Math.floor(Math.random() * todoNumbers.length);
-        setCurrentNumber(todoNumbers[randomIndex]);
-      }
-    };
-
-    window.addEventListener("keydown", handleSpacebar);
-    return () => {
-      window.removeEventListener("keydown", handleSpacebar);
-    };
-  }, [todoNumbers]);
-
-  useEffect(() => {
     // Initialize the first number (pick random)
     const randomIndex = Math.floor(Math.random() * todoNumbers.length);
     setCurrentNumber(todoNumbers[randomIndex]);
