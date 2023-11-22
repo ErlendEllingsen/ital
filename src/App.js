@@ -143,10 +143,10 @@ const ItalianNumbersLearning = () => {
     setInputValue("");
   };
 
-  const setMax = (limit) => {
+  const setRange = (limitLow, limitHigh) => {
     return () => {
       const newTodoNrs = Object.keys(italianNumbers).filter(
-        (num) => num <= limit
+        (num) => num >= limitLow && num <= limitHigh
       );
       setTodoNumbers(newTodoNrs);
       const randomIndex = Math.floor(Math.random() * newTodoNrs.length);
@@ -179,10 +179,14 @@ const ItalianNumbersLearning = () => {
       </div>
       <hr />
       <div className="control-buttons">
-        <p>Change difficulty:</p>
-        <button onClick={setMax(20)}>Max 20</button>
-        <button onClick={setMax(50)}>Max 50</button>
-        <button onClick={setMax(100)}>Max 100</button>
+        <p>Change set:</p>
+        <button onClick={setRange(0, 20)}>0-20</button>
+        <button onClick={setRange(0, 50)}>0-50</button>
+        <button onClick={setRange(0, 100)}>0-100</button>
+        <hr />
+        <hr />
+        <button onClick={setRange(20, 30)}>20-30</button>
+        <button onClick={setRange(20, 50)}>20-50</button>
       </div>
     </div>
   );
